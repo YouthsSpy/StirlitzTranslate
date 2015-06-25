@@ -28,8 +28,6 @@
       function DoTranslate(){
         var result = el("taGet").value;
         
-        result = Read(result);
-        
         var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצת";
         var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,";
         
@@ -37,6 +35,8 @@
           console.log(i + " , " + charsEn[i] + " , " + charsHe[i]);
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
+        
+        result = Read(result);
         
         el("result").innerHTML = result;
       }
