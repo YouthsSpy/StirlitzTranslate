@@ -8,6 +8,12 @@
       function DoTranslate(){
         var result = el("taGet").value;
         
+        for(var i = 0; i < result.length; i++){
+          if(result.substring(i, i+4) === "back"){
+            
+          }
+        }
+        
         result = result.replace("return", "\n");
         result = result.replace("menu", "\nalt\n");
         result = result.replace("space", " ");
