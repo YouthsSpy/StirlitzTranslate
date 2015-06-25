@@ -8,15 +8,15 @@
       function DoTranslate(){
         var result = el("taGet").value;
         
-        result = result.replace("return", "/r/n");
-        result = result.replace("menu", "/r/nalt/r/n");
+        result = result.replace("return", "/n");
+        result = result.replace("menu", "/nalt/n");
         result = result.replace("space", " ");
         result = result.replace("[]", "");
         result = result.replace("oemcomma", ";");
         result = result.replace("oem", ".");
         result = result.replace("minus", "-");
         result = result.replace("plus", "+");
-        result = result.replace("back", "/r/nback/r/n");
+        result = result.replace("back", "/nback/n");
         
         el("taSet").value = result;
       }
