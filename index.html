@@ -37,6 +37,7 @@
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
         result = replaceAll(result, ";", "ת");
+        result = Read(result);
         el("resultHe").innerHTML = result;
       }
       function replaceAll(str, get, set) {
