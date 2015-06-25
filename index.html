@@ -23,8 +23,8 @@
       function DoTranslate(){
         var result = el("taGet").value;
         
-        var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצתץ";
-        var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,.";
+        var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצת";
+        var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,";
         for(var i = 0; i < charsEn.length; i++){
           console.log(i + " , " + charsEn[i] + " , " + charsHe[i]);
           result = replaceAll(result, charsEn[i], charsHe[i]);
