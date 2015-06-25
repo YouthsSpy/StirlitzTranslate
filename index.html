@@ -14,9 +14,9 @@
         result = replaceAll(result, "[]", "");
         result = replaceAll(result, "oemcomma", ";");
         result = replaceAll(result, "oem", ".");
-        result = replaceAll(result, "minus", "-");
-        result = replaceAll(result, "plus", "+");
-        result = replaceAll(result, "back", "\nback\n");
+        result = replaceAll(result, "minus", " - ");
+        result = replaceAll(result, "plus", " + ");
+        result = replaceAll(result, "back", " back ");
         
         el("taSet").value = result;
       }
@@ -29,9 +29,9 @@
         background-color: #00cc00;
       }
       #taGet, #taSet{
-        position: fixed;
+        position: absolute;
         width:100%;
-        height:49%;
+        height:45%;
         background-color: #000000;
         color: #00cc00;
       }
@@ -41,12 +41,19 @@
       }
       #taSet{
         left: 0;
-        top: 51%;
+        top: 55%;
+      }
+      #btnToHe{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height:5%;
       }
     </style>
   </head>
   <body>
     <textarea id="taGet" onchange="DoTranslate();"></textarea>
+    <button id="btnToHe">Hebrew Translate</button>
     <textarea id="taSet" disabled></textarea>
   </body>
 </html>
