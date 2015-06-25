@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Stirlitztranslate by YouthsSpy</title>
+    <script>
+      var el = function(o){ return document.getElementById(o); }
+      function DoTranslate(){
+        el("strSet").value = "aaa";
+      }
+    </script>
     <style>
       #strGet, #strSet{
         position: fixed;
@@ -10,17 +16,19 @@
         height:40%;
       }
       #strGet{
+        left: 0;
         top: 0;
       }
       #strSet{
-        top: 40%;
+        left: 0;
+        top: 50%;
       }
     </style>
   </head>
   <body>
-    <textarea id="strGet"></textarea>
+    <textarea id="strGet" onchange="DoTranslate();"></textarea>
     <br />
-    <textarea id="strSet"></textarea>
+    <textarea id="strSet" disabled></textarea>
   </body>
 </html>
 
