@@ -18,7 +18,7 @@
         result = replaceAll(result, "back", " back ");
         result = replaceAll(result, "[]", "");
         
-        el("result").value = result;
+        el("result").innerHTML = result;
         el("result").dir = "ltr";
       }
       function DoTranslate(){
@@ -42,7 +42,7 @@
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
         
-        el("result").value = result;
+        el("result").innerHTML = result;
         el("result").dir = "rtl";
       }
       function replaceAll(str, get, set) {
