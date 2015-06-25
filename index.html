@@ -5,7 +5,7 @@
     <title>Stirlitz Translate by YouthsSpy</title>
     <script>
       var el = function(o){ return document.getElementById(o); }
-      function DoMeans(){
+      function Convert(){
         var result = el("taGet").value;
         
         result = replaceAll(result, "return", "\n");
@@ -79,10 +79,17 @@
         top: 30.5%;
         height:5%;
       }
+      #btnConvert{
+        position: absolute;
+        right: 0;
+        top: 30.5%;
+        height:5%;
+      }
     </style>
   </head>
   <body>
-    <textarea id="taGet" onchange="DoMeans();"></textarea>
+    <textarea id="taGet"></textarea>
+    <button id="btnConvert" onclick="Convert();">Convert</button>
     <button id="btnToHe" onclick="DoTranslate();">Hebrew Translate</button>
     <div id="result"></div>
   </body>
