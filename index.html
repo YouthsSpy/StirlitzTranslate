@@ -10,10 +10,14 @@
       }
     </script>
     <style>
+      body{
+        background-color: #cccccc;
+      }
       #strGet, #strSet{
         position: fixed;
         width:100%;
-        height:40%;
+        height:50%;
+        background-color: #ffffff;
       }
       #strGet{
         left: 0;
@@ -27,7 +31,6 @@
   </head>
   <body>
     <textarea id="strGet" onchange="DoTranslate();"></textarea>
-    <br />
     <textarea id="strSet" disabled></textarea>
   </body>
 </html>
