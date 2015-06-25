@@ -37,6 +37,9 @@
       function replaceAll(str, get, set) {
         return str.replace(new RegExp(get, 'g'), set);
       }
+      function OnResultScroll(o){
+        document.getElementById(\"resultHe\").scrollTop = o.scrollTop;
+      }
     </script>
     <style>
       body{
@@ -57,7 +60,7 @@
         position: absolute;
         left: 0;
         top: 35%;
-        width:49%;
+        width:50%;
         height:65%;
         background-color: #000000;
         color: #00cc00;
@@ -77,7 +80,7 @@
   </head>
   <body>
     <textarea id="taGet" onchange="Convert();"></textarea>
-    <div id="result"></div>
+    <div id="result" onscroll="OnResultScroll(this);"></div>
     <div id="resultHe"></div>
   </body>
 </html>
