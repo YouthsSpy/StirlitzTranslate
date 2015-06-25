@@ -5,7 +5,7 @@
     <title>Stirlitz Translate by YouthsSpy</title>
     <script>
       var el = function(o){ return document.getElementById(o); }
-      function DoTranslate(){
+      function DoMeans(){
         var result = el("taGet").value;
         
         result = replaceAll(result, "return", "\n");
@@ -17,6 +17,17 @@
         result = replaceAll(result, "minus", " - ");
         result = replaceAll(result, "plus", " + ");
         result = replaceAll(result, "back", " back ");
+        
+        el("taSet").value = result;
+      }
+      function DoTranslate(){
+        var result = el("taGet").value;
+        
+        var charsHe = "/'קראטוןםפ][שדגכעיחלךף,\\זסבהנמצתץ.";
+        var charsEn = "QWERTYUIOP[]ASDFGHJKL;'\\ZXCVBNM,./";
+        for(var i = 0; i < charsEn.length; i++){
+          result = replaceAll(result, charsEn[i], charsHe[i]);
+        }
         
         el("taSet").value = result;
       }
@@ -53,8 +64,8 @@
     </style>
   </head>
   <body>
-    <textarea id="taGet" onchange="DoTranslate();"></textarea>
-    <button id="btnToHe">Hebrew Translate</button>
+    <textarea id="taGet" onchange="DoMeans();"></textarea>
+    <button id="btnToHe" onclick="DoTranslate();">Hebrew Translate</button>
     <textarea id="taSet" disabled></textarea>
   </body>
 </html>
