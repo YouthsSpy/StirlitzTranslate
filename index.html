@@ -8,23 +8,20 @@
       function DoTranslate(){
         var result = el("taGet").value;
         
-        for(var i = 0; i < result.length; i++){
-          if(result.substring(i, i+4) === "back"){
-            
-          }
-        }
-        
-        result = result.replace("return", "\n");
-        result = result.replace("menu", "\nalt\n");
-        result = result.replace("space", " ");
-        result = result.replace("[]", "");
-        result = result.replace("oemcomma", ";");
-        result = result.replace("oem", ".");
-        result = result.replace("minus", "-");
-        result = result.replace("plus", "+");
-        result = result.replace("back", "\nback\n");
+        result = replaceAll(result, "return", "\n");
+        result = replaceAll(result, "menu", "\nalt\n");
+        result = replaceAll(result, "space", " ");
+        result = replaceAll(result, "[]", "");
+        result = replaceAll(result, "oemcomma", ";");
+        result = replaceAll(result, "oem", ".");
+        result = replaceAll(result, "minus", "-");
+        result = replaceAll(result, "plus", "+");
+        result = replaceAll(result, "back", "\nback\n");
         
         el("taSet").value = result;
+      }
+      function replaceAll(str, get, set) {
+        return str.replace(new RegExp(get, 'g'), set);
       }
     </script>
     <style>
