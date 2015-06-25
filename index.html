@@ -54,8 +54,8 @@
         return str;
       }
       function OnResultScroll(o){
-        document.getElementById("result").scrollTop = o.scrollTop;
-        document.getElementById("resultChar").scrollTop = o.scrollTop;
+        el("result").scrollTop = o.scrollTop;
+        el("resultChar").scrollTop = o.scrollTop;
       }
     </script>
     <style>
