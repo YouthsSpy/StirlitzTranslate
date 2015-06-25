@@ -19,26 +19,21 @@
         return result;
       }
       function Convert(){
-        var result = el("taGet").value;
+        var result;
         
+        result = el("taGet").value;
         result = Read(result);
-        
         el("result").innerHTML = result;
-      }
-      function DoTranslate(){
-        var result = el("taGet").value;
         
+        result = el("taGet").value;
         var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצת";
         var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,";
-        
         for(var i = 0; i < charsEn.length; i++){
           console.log(i + " , " + charsEn[i] + " , " + charsHe[i]);
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
-        
         result = Read(result);
-        
-        el("result").innerHTML = result;
+        el("resultHe").innerHTML = result;
       }
       function replaceAll(str, get, set) {
         return str.replace(new RegExp(get, 'g'), set);
@@ -63,7 +58,17 @@
         position: absolute;
         left: 0;
         top: 35%;
-        width:100%;
+        width:49%;
+        height:65%;
+        background-color: #000000;
+        color: #00cc00;
+        overflow-y: scroll;
+      }
+      #resultHe{
+        position: absolute;
+        left: 51%;
+        top: 35%;
+        width:50%;
         height:65%;
         background-color: #000000;
         color: #00cc00;
@@ -88,6 +93,7 @@
     <button id="btnConvert" onclick="Convert();">Convert</button>
     <button id="btnToHe" onclick="DoTranslate();">Hebrew Translate</button>
     <div id="result"></div>
+    <div id="resultHe"></div>
   </body>
 </html>
 
