@@ -11,6 +11,7 @@
         result = replaceAll(result, "capslock", "<br /><font style=\"color: #ff0000;\">caps lock</font><br />");
         result = replaceAll(result, "space", " ");
         result = replaceAll(result, "[]", "");
+        result = replaceAll(result, "][", "");
         result = replaceAll(result, "oemcomma", ";");
         result = replaceAll(result, "oemperiod", ".");
         result = replaceAll(result, "decimal", ".");
@@ -30,13 +31,13 @@
         el("result").innerHTML = result;
         
         result = el("taGet").value;
-        var charsHe = "'קראטוןםפשדגכעיחלךףזסבהנמצתת";
-        var charsEn = "WERTYUIOPASDFGHJKL;ZXCVBNM,;";
+        var charsHe = "'קראטוןםפשדגכעיחלךףזסבהנמצת";
+        var charsEn = "WERTYUIOPASDFGHJKL;ZXCVBNM,";
         for(var i = 0; i < charsEn.length; i++){
           console.log(i + ": " + charsEn[i] + " = " + charsHe[i]);
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
-        result = Read(result);
+        result = replaceAll(result, ";", "ת");
         el("resultHe").innerHTML = result;
       }
       function replaceAll(str, get, set) {
