@@ -56,6 +56,7 @@
       function OnResultScroll(o){
         el("result").scrollTop = o.scrollTop;
         el("resultChar").scrollTop = o.scrollTop;
+        el("resultHe").scrollTop = o.scrollTop;
       }
     </script>
     <style>
@@ -93,8 +94,8 @@
         <td colspan="3"><textarea id="taGet" onchange="Convert();"></textarea></td>
       </tr>
       <tr>
-        <td><div id="result"></div></td>
-        <td><div id="resultChar"></div></td>
+        <td><div id="result" onscroll="OnResultScroll(this);"></div></td>
+        <td><div id="resultChar" onscroll="OnResultScroll(this);"></div></td>
         <td><div id="resultHe" onscroll="OnResultScroll(this);"></div></td>
       </tr>
     </table>
