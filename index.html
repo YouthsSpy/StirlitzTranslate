@@ -5,25 +5,7 @@
     <title>Stirlitz Translate by YouthsSpy</title>
     <script>
       var el = function(o){ return document.getElementById(o); }
-      function Convert(){
-        var result = el("taGet").value;
-        
-        result = replaceAll(result, "return", "\n");
-        result = replaceAll(result, "menu", "\nalt\n");
-        result = replaceAll(result, "space", " ");
-        result = replaceAll(result, "oemcomma", ";");
-        result = replaceAll(result, "oem", ".");
-        result = replaceAll(result, "minus", " - ");
-        result = replaceAll(result, "plus", " + ");
-        result = replaceAll(result, "back", " back ");
-        result = replaceAll(result, "[]", "");
-        
-        el("result").innerHTML = result;
-        el("result").dir = "ltr";
-      }
-      function DoTranslate(){
-        var result = el("taGet").value;
-        
+      function Read(result){
         result = replaceAll(result, "return", "<br />");
         result = replaceAll(result, "menu", "<br /><font style=\"color: #ff0000;\">alt</font><br />");
         result = replaceAll(result, "capslock", "<br /><font style=\"color: #ff0000;\">caps lock</font><br />");
@@ -34,6 +16,20 @@
         result = replaceAll(result, "minus", " - ");
         result = replaceAll(result, "plus", " + ");
         result = replaceAll(result, "back", " <font style=\"color: #ff0000;\">back</font><br /> ");
+        return result;
+      }
+      function Convert(){
+        var result = el("taGet").value;
+        
+        result = Read(result);
+        
+        el("result").innerHTML = result;
+        el("result").dir = "ltr";
+      }
+      function DoTranslate(){
+        var result = el("taGet").value;
+        
+        result = Read(result);
         
         var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצת";
         var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,";
