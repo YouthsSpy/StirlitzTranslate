@@ -9,11 +9,12 @@
         result = replaceAll(result, "return", "<br />");
         result = replaceAll(result, "menu", "<br /><font style=\"color: #ff0000;\">alt</font><br />");
         result = replaceAll(result, "capslock", "<br /><font style=\"color: #ff0000;\">caps lock</font><br />");
+        result = replaceAll(result, "capital", "<br /><font style=\"color: #ff0000;\">caps lock</font><br />");
         result = replaceAll(result, "space", " ");
         result = replaceAll(result, "oemcomma", ";");
         result = replaceAll(result, "oemperiod", ".");
         result = replaceAll(result, "decimal", ".");
-        result = replaceAll(result, "oemquestion", "?");
+        result = replaceAll(result, "oemquestion", "(?/.)");
         result = replaceAll(result, "oem", ".");
         result = replaceAll(result, "minus", " - ");
         result = replaceAll(result, "subtract", " - ");
@@ -35,8 +36,8 @@
           console.log(i + ": " + charsEn[i] + " = " + charsHe[i]);
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
-        result = Read(result);
         result = replaceAll(result, "\;", "ת");
+        result = Read(result);
         el("resultHe").innerHTML = result;
       }
       function replaceAll(str, get, set) {
