@@ -19,6 +19,7 @@
         result = replaceAll(result, "[]", "");
         
         el("result").value = result;
+        el("result").dir = "ltr";
       }
       function DoTranslate(){
         var result = el("taGet").value;
@@ -42,6 +43,7 @@
         }
         
         el("result").value = result;
+        el("result").dir = "rtl";
       }
       function replaceAll(str, get, set) {
         return str.replace(new RegExp(get, 'g'), set);
