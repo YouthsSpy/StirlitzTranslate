@@ -24,22 +24,20 @@
         result = Read(result);
         
         el("result").innerHTML = result;
-        el("result").dir = "ltr";
       }
       function DoTranslate(){
         var result = el("taGet").value;
         
         result = Read(result);
         
-        var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצת";
-        var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,";
+        var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצתץ";
+        var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,.";
         for(var i = 0; i < charsEn.length; i++){
           console.log(i + " , " + charsEn[i] + " , " + charsHe[i]);
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
         
         el("result").innerHTML = result;
-        el("result").dir = "rtl";
       }
       function replaceAll(str, get, set) {
         return str.replace(new RegExp(get, 'g'), set);
@@ -74,13 +72,13 @@
         position: absolute;
         left: 0;
         top: 30.5%;
-        height:5%;
+        height: 5%;
       }
       #btnConvert{
         position: absolute;
         right: 0;
         top: 30.5%;
-        height:5%;
+        height: 5%;
       }
     </style>
   </head>
