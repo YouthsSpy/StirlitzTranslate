@@ -36,12 +36,20 @@
           console.log(i + ": " + charsEn[i] + " = " + charsHe[i]);
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
-        result = replaceAll(result, "\;", "ת");
+        result = replaceAllChar(result, ";", "ת");
+        result = replaceAllChar(result, "[", "");
+        result = replaceAllChar(result, "]", "");
         result = Read(result);
         el("resultHe").innerHTML = result;
       }
       function replaceAll(str, get, set) {
         return str.replace(new RegExp(get, 'g'), set);
+      }
+      function replaceAllChar(str, get, set) {
+        for(var i = 0; i < str.length; i++){
+          str = str.replace(get, set);
+        }
+        return str;
       }
       function OnResultScroll(o){
         document.getElementById("resultHe").scrollTop = o.scrollTop;
