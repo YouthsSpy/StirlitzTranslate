@@ -70,32 +70,33 @@
         color: #00cc00;
         resize: none;
       }
-      #result{
+      #result, #resultChar, #resultHe{
         position: absolute;
-        left: 0;
         top: 35%;
-        width:50%;
         height:65%;
         background-color: #000000;
         color: #00cc00;
         overflow-y: scroll;
       }
+      #result{
+        left: 0;
+        width:32%;
+      }
+      #resultChar{
+        left: 33%;
+        width:32%;
+      }
       #resultHe{
-        position: absolute;
-        left: 51%;
-        top: 35%;
-        width:50%;
-        height:65%;
-        background-color: #000000;
-        color: #00cc00;
-        overflow-y: scroll;
+        left: 66%;
+        width:32%;
       }
     </style>
   </head>
   <body>
     <textarea id="taGet" onchange="Convert();"></textarea>
-    <div id="result" onscroll="OnResultScroll(this);"></div>
-    <div id="resultHe"></div>
+    <div id="result"></div>
+    <div id="resultChar"></div>
+    <div id="resultHe" onscroll="OnResultScroll(this);"></div>
   </body>
 </html>
 
