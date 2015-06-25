@@ -11,27 +11,28 @@
         result = replaceAll(result, "return", "\n");
         result = replaceAll(result, "menu", "\nalt\n");
         result = replaceAll(result, "space", " ");
-        result = replaceAll(result, "[]", "");
         result = replaceAll(result, "oemcomma", ";");
         result = replaceAll(result, "oem", ".");
         result = replaceAll(result, "minus", " - ");
         result = replaceAll(result, "plus", " + ");
         result = replaceAll(result, "back", " back ");
+        result = replaceAll(result, "[]", "");
         
-        el("taSet").value = result;
+        el("result").value = result;
       }
       function DoTranslate(){
         var result = el("taGet").value;
         
-        result = replaceAll(result, "return", "\n");
-        result = replaceAll(result, "menu", "\nalt\n");
+        result = replaceAll(result, "return", "<br />");
+        result = replaceAll(result, "menu", "<br /><font style=\"color: #ff0000;\">alt</font><br />");
+        result = replaceAll(result, "capslock", "<br /><font style=\"color: #ff0000;\">caps lock</font><br />");
         result = replaceAll(result, "space", " ");
         result = replaceAll(result, "[]", "");
         result = replaceAll(result, "oemcomma", ";");
         result = replaceAll(result, "oem", ".");
         result = replaceAll(result, "minus", " - ");
         result = replaceAll(result, "plus", " + ");
-        result = replaceAll(result, "back", " back ");
+        result = replaceAll(result, "back", " <font style=\"color: #ff0000;\">back</font><br /> ");
         
         var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצת";
         var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,";
@@ -40,7 +41,7 @@
           result = replaceAll(result, charsEn[i], charsHe[i]);
         }
         
-        el("taSet").value = result;
+        el("result").value = result;
       }
       function replaceAll(str, get, set) {
         return str.replace(new RegExp(get, 'g'), set);
@@ -51,7 +52,7 @@
         background-color: #00cc00;
         overflow: hidden;
       }
-      #taGet, #taSet{
+      #taGet, #result{
         position: absolute;
         width:100%;
         height:45%;
@@ -62,7 +63,7 @@
         left: 0;
         top: 0;
       }
-      #taSet{
+      #result{
         left: 0;
         top: 55%;
       }
@@ -77,7 +78,7 @@
   <body>
     <textarea id="taGet" onchange="DoMeans();"></textarea>
     <button id="btnToHe" onclick="DoTranslate();">Hebrew Translate</button>
-    <textarea id="taSet" disabled></textarea>
+    <div id="result"></div>
   </body>
 </html>
 
