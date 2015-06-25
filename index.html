@@ -23,6 +23,16 @@
       function DoTranslate(){
         var result = el("taGet").value;
         
+        result = replaceAll(result, "return", "\n");
+        result = replaceAll(result, "menu", "\nalt\n");
+        result = replaceAll(result, "space", " ");
+        result = replaceAll(result, "[]", "");
+        result = replaceAll(result, "oemcomma", ";");
+        result = replaceAll(result, "oem", ".");
+        result = replaceAll(result, "minus", " - ");
+        result = replaceAll(result, "plus", " + ");
+        result = replaceAll(result, "back", " back ");
+        
         var charsHe = "קראטוןםפשדגכעיחלךףזסבהנמצת";
         var charsEn = "ERTYUIOPASDFGHJKL;ZXCVBNM,";
         for(var i = 0; i < charsEn.length; i++){
@@ -61,6 +71,7 @@
         left: 0;
         top: 47%;
         height:6%;
+        display: none;
       }
     </style>
   </head>
