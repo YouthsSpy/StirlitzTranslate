@@ -8,24 +8,24 @@
       function DoTranslate(){
         var result = el("taGet").value;
         
-        result = result.replace("return", "/n");
-        result = result.replace("menu", "/nalt/n");
+        result = result.replace("return", "\n");
+        result = result.replace("menu", "\nalt\n");
         result = result.replace("space", " ");
         result = result.replace("[]", "");
         result = result.replace("oemcomma", ";");
         result = result.replace("oem", ".");
         result = result.replace("minus", "-");
         result = result.replace("plus", "+");
-        result = result.replace("back", "/nback/n");
+        result = result.replace("back", "\nback\n");
         
-        el("result").innerHTML = result;
+        el("taSet").value = result;
       }
     </script>
     <style>
       body{
         background-color: #00cc00;
       }
-      #taGet, #result{
+      #taGet, #taSet{
         position: fixed;
         width:100%;
         height:49%;
@@ -36,7 +36,7 @@
         left: 0;
         top: 0;
       }
-      #result{
+      #taSet{
         left: 0;
         top: 51%;
       }
@@ -44,7 +44,7 @@
   </head>
   <body>
     <textarea id="taGet" onchange="DoTranslate();"></textarea>
-    <div id="result"></div>
+    <textarea id="taSet" disabled></textarea>
   </body>
 </html>
 
