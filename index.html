@@ -72,11 +72,16 @@
       }
       #taGet{
         resize: none;
-      }
-      #taGet, #result, #resultChar, #resultHe{
         background-color: #000000;
         width: 100%;
         height: 100%;
+        color: #00cc00;
+        overflow-y: scroll;
+      }
+      #result, #resultChar, #resultHe{
+        background-color: #000000;
+        width: 33%;
+        height: 33%;
         color: #00cc00;
         overflow-y: scroll;
       }
@@ -90,9 +95,6 @@
       tr, td{
         border: 1px solid #00cc00;
       }
-      .fixedWidth{
-        max-width: 33.3%;
-      }
     </style>
   </head>
   <body>
@@ -101,9 +103,9 @@
         <td colspan="3"><textarea id="taGet" onchange="Convert();"></textarea></td>
       </tr>
       <tr>
-        <td class="fixedWidth"><div id="result" onscroll="OnResultScroll(this);"></div></td>
-        <td class="fixedWidth"><div id="resultChar" onscroll="OnResultScroll(this);"></div></td>
-        <td class="fixedWidth"><div id="resultHe" onscroll="OnResultScroll(this);"></div></td>
+        <td><div id="result" onscroll="OnResultScroll(this);"></div></td>
+        <td><div id="resultChar" onscroll="OnResultScroll(this);"></div></td>
+        <td><div id="resultHe" onscroll="OnResultScroll(this);"></div></td>
       </tr>
     </table>
   </body>
