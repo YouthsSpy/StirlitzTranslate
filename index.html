@@ -11,6 +11,7 @@
         result = replaceAll(result, "capslock", "<br /><font style=\"color: #ff0000;\">caps lock</font><br />");
         result = replaceAll(result, "capital", "<br /><font style=\"color: #ff0000;\">caps lock</font><br />");
         result = replaceAll(result, "space", " ");
+        result = replaceAll(result, "numlock", "<br /><font style=\"color: #ff0000;\">num lock</font><br />");
         result = replaceAll(result, "oemcomma", ";");
         result = replaceAll(result, "oemperiod", ".");
         result = replaceAll(result, "decimal", ".");
@@ -86,6 +87,9 @@
       table, tr, td{
         border: 1px solid #00cc00;
       }
+      #fixedWidth{
+        width: 33%;
+      }
     </style>
   </head>
   <body>
@@ -94,9 +98,9 @@
         <td colspan="3"><textarea id="taGet" onchange="Convert();"></textarea></td>
       </tr>
       <tr>
-        <td><div id="result" onscroll="OnResultScroll(this);"></div></td>
-        <td><div id="resultChar" onscroll="OnResultScroll(this);"></div></td>
-        <td><div id="resultHe" onscroll="OnResultScroll(this);"></div></td>
+        <td class="fixedWidth"><div id="result" onscroll="OnResultScroll(this);"></div></td>
+        <td class="fixedWidth"><div id="resultChar" onscroll="OnResultScroll(this);"></div></td>
+        <td class="fixedWidth"><div id="resultHe" onscroll="OnResultScroll(this);"></div></td>
       </tr>
     </table>
   </body>
