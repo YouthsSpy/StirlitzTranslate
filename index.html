@@ -30,7 +30,13 @@
         result = Read(result);
         el("result").innerHTML = result;
         
-        el("resultChar").innerHTML = result.toLowerCase();
+        result = el("taGet").value;
+        result = Read(result);
+        result = replaceAllChar(result, "[2]", "@");
+        result = replaceAllChar(result, "]", "");
+        result = replaceAllChar(result, "[", "");
+        result = result.toLowerCase()
+        el("resultChar").innerHTML = result;
         
         result = el("taGet").value;
         var charsHe = "'קראטוןםפשדגכעיחלךףזסבהנמצת";
